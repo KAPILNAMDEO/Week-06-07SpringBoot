@@ -52,6 +52,15 @@ public class HelloController {
         return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz";
     }
 
+    //UC5
+    @PutMapping("/put/{firstName}")
+    public String sayHello(@PathVariable String firstName, @RequestParam(required = false) String lastName) {
+        if (lastName == null || lastName.isEmpty()) {
+            return "Error: lastName query parameter is required!";
+        }
+        return "Hello " + firstName + " " + lastName + " from BridgeLabz";
+    }
+
 
 }
 
