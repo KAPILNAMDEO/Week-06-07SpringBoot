@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/hello")
 public class HelloController {
 
+    //UC1
     // GET Method - Default response
     @GetMapping
     public String getHello() {
@@ -32,9 +33,19 @@ public class HelloController {
         return "Hello from BridgeLabz - DELETE Request";
     }
 
+
+    //uc2
+    @GetMapping("/hello/query")
+    public String UC2(@RequestParam String name) {
+        return "Hello " + name + " from BridgeLabz";
+    }
+
+    //uc3
     @GetMapping("/param/{name}")
     public String getHello(@PathVariable String name) {
         return "Hello " + name + " from BridgeLabz";
     }
+
+
 }
 
