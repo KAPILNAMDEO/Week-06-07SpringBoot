@@ -31,5 +31,10 @@ public class HelloController {
     public String deleteHello() {
         return "Hello from BridgeLabz - DELETE Request";
     }
+
+    @GetMapping("/param/{name}")
+    public String getHello(@PathVariable String name) {
+        return "Hello " + name + " from BridgeLabz";
+    }
 }
 
